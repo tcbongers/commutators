@@ -6,6 +6,10 @@
 \date{\today}
 
 \begin{document}
+\maketitle
 Fix an integer $N$; our goal is to determine an $N$ depending on the dimension $d$ and the associated $A_2$ weight $\nu$ so that if $\varphi \in \text{BMO}_{\nu}$, then we have
 $$\int_{\mathbb{R}^d} \frac{|\varphi(x)|}{1 + |x|^N} \, dx \lesssim \|\varphi\|_{\text{BMO}_{\nu}}.$$
+Rather than applying the doubling property of $\nu \in A_2$, we will use the fairness property: since $\nu \in A_{\infty}$, there exists a $\delta > 0$ for which we have
+$$\frac{\nu(A)}{\nu(B)} \lesssim \left(\frac{|A|}{|B|}\right)^{\delta}$$
+for sets $A \subseteq B$.
 \end{document}
