@@ -12,4 +12,16 @@ $$\int_{\mathbb{R}^d} \frac{|\varphi(x)|}{1 + |x|^N} \, dx \lesssim \|\varphi\|_
 Rather than applying the doubling property of $\nu \in A_2$, we will use the fairness property: since $\nu \in A_{\infty}$, there exists a $\delta > 0$ for which we have
 $$\frac{\nu(A)}{\nu(B)} \lesssim \left(\frac{|A|}{|B|}\right)^{\delta}$$
 for sets $A \subseteq B$.
+
+Decompose $\mathbb{R}^d$ into a sequence of shells $\mathcal{A}_j = B(0, 2^j) \setminus B(0, 2^{j - 1})$ at scale $2^j$ with $A_0 = B(0, 1)$. Let $\varphi_j$ denote the average of $\varphi$ over the ball $B_j = B(0, 2^j)$. Without loss of generality, we take the weighted BMO norm of $\varphi$ to be $1$; in this case, we have
+\begin{align*}
+	\int_{\mathbb{R}^d} \frac{|\varphi|}{1 + |x|^N} \, dx &= \sum_{j = 0}^{\infty} \int_{A_j} \frac{|\varphi|}{1 + |x|^N} \, dx \\
+	&\le \sum_{j = 0}^{\infty} \int_{A_j} \frac{|\varphi - \varphi_{B_j}| + |\varphi_{B_j}|}{1 + |x|^N} \, dx \\
+	&\lesssim \sum_{j = 0}^{\infty} \int_{B_j} \frac{|\varphi - \varphi_{B_j}| + |\varphi_{B_j}|}{2^{jN}} \, dx \\
+	&= \sum_{j = 0}^{\infty} \frac{1}{2^{jN}} \left(\int_{B_j} |\varphi - \varphi_{B_j}| \, dx + \int_{B_j} |\varphi_{B_j}| \, dx\right) \\
+	&\le \sum_{j = 0}^{\infty} \frac{1}{2^{jN}} \left(\nu(B_j) \cdot \frac{1}{\nu(B_j)} \int_{B_j} |\varphi - \varphi_{B_j}| \, dx + |B_j| \cdot |\varphi_{B_j}|\right) \\
+	&\le \sum_{j = 0}^{\infty} \frac{1}{2^{jN}} \left(\nu(B_j) \cdot \|\varphi\|_{\text{BMO}_{\nu}} + |B_j| \cdot |\varphi_{B_j}|\right) \\
+	&= \sum_{j = 0}^{\infty} \frac{\nu(B_j) + |B_j| \cdot |\varphi_{B_j}|}{2^{jN}}.
+\end{align*}
+In the case that $\nu \equiv 1$ induces Lebesgue measure, we would then have the estimates $\nu(B_j) = |B_j| \approx 2^{jd}$ and $|\varphi_{B_j}| \lesssim j$; this sub-exponential growth in the second term is then sufficient to give an estimate when $N = d + 1$.
 \end{document}
